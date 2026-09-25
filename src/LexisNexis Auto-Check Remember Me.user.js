@@ -1,9 +1,11 @@
 // ==UserScript==
 // @name         LexisNexis Auto-Check Remember Me
 // @namespace    https://github.com/jamesham/lawmods
-// @version      2026-02-03.00
+// @version      2026-09-25.00
 // @description  Automatically checks the "Remember Me" box on LexisNexis auth pages
 // @match        https://authn-us.lexisnexis.com/*
+// @updateURL    https://raw.githubusercontent.com/jamesham/lawmods/main/src/LexisNexis%20Auto-Check%20Remember%20Me.user.js
+// @downloadURL  https://raw.githubusercontent.com/jamesham/lawmods/main/src/LexisNexis%20Auto-Check%20Remember%20Me.user.js
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==

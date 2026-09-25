@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Hamilton County Portfolio Linkifier
 // @namespace    https://github.com/jamesham/lawmods
-// @version      2024-11-18.00
+// @version      2026-09-25.00
 // @description  Make Links from the portfolio on courtclerk.org go directly to the document list
 // @author       James Hamilton
 // @match        https://www.courtclerk.org/data/portfolio_list.php
+// @updateURL    https://raw.githubusercontent.com/jamesham/lawmods/main/src/Hamilton%20County%20Portfolio%20Linkifier.user.js
+// @downloadURL  https://raw.githubusercontent.com/jamesham/lawmods/main/src/Hamilton%20County%20Portfolio%20Linkifier.user.js
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
