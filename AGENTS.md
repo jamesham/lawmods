@@ -18,6 +18,8 @@ Before making changes, inspect the current working tree and avoid overwriting un
 
 Make focused changes related to the requested task. Do not perform unrelated cleanup or refactoring unless it is necessary for the requested change.
 
+Review the changes and update the version number of a modified userscript immediately before committing the change to the git repo, if the script has been modified and is included in the git commit.
+
 ## Userscript versions
 
 Userscript `@version` values use this format:
@@ -39,7 +41,7 @@ Examples:
 2026-09-25.02
 ```
 
-When modifying a userscript, update its `@version`.
+When modifying a userscript, update its `@version` at the time the modifications are committed to the git repo. Avoid modifying the version before committing because it may cause version numbering to jump unexpectedly in the git history.
 
 If the script has not yet been changed on the current date, use:
 
