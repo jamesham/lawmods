@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hamilton County Search Results Linkifier
 // @namespace    https://github.com/jamesham/lawmods
-// @version      2026-09-25.00
+// @version      2026-09-27.00
 // @description  Make Links from the portfolio on courtclerk.org go directly to the document list
 // @author       James Hamilton
 // @match        https://www.courtclerk.org/data/cns_results.php*
@@ -11,23 +11,22 @@
 // @grant        none
 // ==/UserScript==
 
-function waitForTableAndCallUpdate() {
-    var tableStyle = document.getElementById("cns_results_table").style;
-    var styleLen = tableStyle.length;
-
+function updateCaseForms() {
     var inputs = document.getElementsByTagName('input');
     var inputsLen = inputs.length;
 
     var i = 0;
     while (i < inputsLen) {
         var input = inputs[i];
-        if (input.type == "hidden" && input.name == "casenumber") {
-            console.log(input);
-            var newInput = document.createElement("input");
-            newInput.type="hidden";
-            newInput.name="sec";
-            newInput.value="history";
-            input.parentNode.appendChild(newInput);
+        if (input.type == "hidden" && input.name == "casenumber" && input.form) {
+            var secInput = input.form.querySelector('input[name="sec"]');
+            if (!secInput) {
+                secInput = document.createElement('input');
+                secInput.type = 'hidden';
+                secInput.name = 'sec';
+                input.form.appendChild(secInput);
+            }
+            secInput.value = 'history';
         }
         i++;
     }
@@ -38,7 +37,7 @@ function waitForTableAndCallUpdate() {
 
     console.log("Greasemonkey script running...");
 
-    waitForTableAndCallUpdate();
+    updateCaseForms();
 
     console.log("Greasemonkey script finished");
 

@@ -78,6 +78,12 @@ Avoid unnecessary abstraction, build systems, dependency managers, or architectu
 
 Websites may change without notice. When interacting with page structure, prefer selectors and logic that are reasonably resilient to minor markup changes.
 
+## Testing Hamilton County scripts
+
+Do not test Hamilton County Clerk of Courts userscripts against the live website, including direct HTTP requests or automated browser tests. The site requires proper referrer headers to return results, so live requests made outside the normal workflow can produce misleading responses.
+
+Use static code review, syntax checks, and local DOM mocks or fixtures instead. If current page behavior is needed, rely on user-provided observations or page captures.
+
 ## Legal-office context
 
 These tools may be used during real legal work, so reliability matters more than cleverness.
